@@ -14,7 +14,10 @@ pipeline {
         stage('Build') {
             steps {
 //                 git 'https://github.com/omaksim94/devops-learn.git'
-                sh "./gradlew bootRun"
+                sh '''
+                chmod +x gradlew
+                ./gradlew bootRun
+                '''
             }
         }
         stage('Build docker image') {
