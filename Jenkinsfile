@@ -16,7 +16,7 @@ pipeline {
 //                 git 'https://github.com/omaksim94/devops-learn.git'
                 sh '''
                 chmod +x gradlew
-                ./gradlew bootRun
+                ./gradlew bootJar
                 '''
             }
         }
