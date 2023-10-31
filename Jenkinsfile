@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/omaksim94/devops-learn.git'
+//                 git 'https://github.com/omaksim94/devops-learn.git'
                 sh "./gradlew bootRun"
             }
         }
