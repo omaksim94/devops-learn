@@ -22,8 +22,7 @@ pipeline {
         stage('Build docker image') {
             steps {
                 sh '''
-                    chmod 666 /var/run/docker.sock
-                    docker build omaksim/k8s-learn .
+                    /var/run/docker.sock build omaksim/k8s-learn .
                 '''
 //                 sh 'docker build omaksim/k8s-learn .'
 //                 script {
