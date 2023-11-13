@@ -13,7 +13,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-//                 git 'https://github.com/omaksim94/devops-learn.git'
                 sh '''
                 chmod +x gradlew
                 ./gradlew bootJar
@@ -23,7 +22,8 @@ pipeline {
         stage('Build docker image') {
             steps {
                 script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    dockerImage = docker.build registry
+//                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
         }
