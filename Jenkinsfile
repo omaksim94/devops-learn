@@ -21,11 +21,11 @@ pipeline {
         }
         stage('Build docker image') {
             steps {
-                sh 'docker ps'
-                script {
-                    dockerImage = docker.build registry
+                sh 'docker build omaksim/k8s-learn .'
+//                 script {
+//                     dockerImage = docker.build registry
 //                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                }
+//                 }
             }
         }
         stage('Push docker image') {
