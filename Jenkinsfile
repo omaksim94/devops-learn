@@ -21,7 +21,11 @@ pipeline {
         }
         stage('Build docker image') {
             steps {
-                sh 'docker build omaksim/k8s-learn .'
+                sh '''
+                    sudo chmod 666 /var/run/docker.sock
+                    docker build omaksim/k8s-learn .
+                '''
+//                 sh 'docker build omaksim/k8s-learn .'
 //                 script {
 //                     dockerImage = docker.build registry
 //                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
