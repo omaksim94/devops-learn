@@ -3,7 +3,7 @@ pipeline {
         docker {
             label 'docker-agent-java-1'
             image 'jenkins/agent'
-            args '-v /var1/run/docker.sock:/var/run/docker.sock'
+            args '-v //var/run/docker.sock:/var/run/docker.sock'
         }
     }
     environment {
