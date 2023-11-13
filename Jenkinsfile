@@ -1,10 +1,8 @@
 pipeline {
     agent {
-        docker {
+         node {
             label 'docker-agent-java-1'
-            image 'jenkins/agent'
-            args '-v /$(pwd)/var/run/docker.sock:/var/run/docker.sock'
-        }
+         }
     }
     environment {
     registry = "omaksim/k8s-learn"
